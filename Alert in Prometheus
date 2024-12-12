@@ -1,0 +1,7 @@
+alert: HighCPUUsage
+expr: avg(rate(process_cpu_seconds_total[5m])) by (instance) > 0.8
+for: 10m
+labels:
+  severity: critical
+annotations:
+  summary: "CPU usage is above 80% for the last 10 minutes"
